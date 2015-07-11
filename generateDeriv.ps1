@@ -1,6 +1,8 @@
 # UC Libraries, DigitzeUC Spokes
 # Generate derivatives for DRC
 
+# DO I need to add depth 8? autodetect gray vs color depth?
+
 Get-ChildItem "." -filter *.tif | `
 	Foreach {
 		$image = New-Object -ComObject Wia.ImageFile            
