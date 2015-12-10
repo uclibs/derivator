@@ -12,6 +12,7 @@ Get-ChildItem "." -recurse -filter *.tif | `
 				.\ImageMagick\convert.exe -resample 300 -resize "5000x5000>" $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg") 
 				.\ImageMagick\convert.exe $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jp2") 
 				.\ImageMagick\convert.exe -thumbnail 100x100 $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg.jpg") 
+				Copy-Item -Path ($_.BaseName + ".jpg.jpg") -Destination ".\$($_.BaseName).jp2.jpg"
 			}
 
 		ElseIf ($image.Width -ge 15000 -Or $image.Height -ge 15000)
@@ -19,6 +20,7 @@ Get-ChildItem "." -recurse -filter *.tif | `
 				.\ImageMagick\convert.exe -resample 300 -resize "5000x5000>" $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg") 
 				.\ImageMagick\convert.exe -resize "15000x15000>" $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jp2")  
 				.\ImageMagick\convert.exe -thumbnail 100x100 $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg.jpg")  
+				Copy-Item -Path ($_.BaseName + ".jpg.jpg") -Destination ".\$($_.BaseName).jp2.jpg"
 			}
 
 		Else
@@ -26,6 +28,7 @@ Get-ChildItem "." -recurse -filter *.tif | `
 				.\ImageMagick\convert.exe -resample 300 $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg") 
 				.\ImageMagick\convert.exe $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jp2") 
 				.\ImageMagick\convert.exe -thumbnail 100x100 $_.FullName ($_.DirectoryName + "\" + $_.BaseName + ".jpg.jpg") 
+				Copy-Item -Path ($_.BaseName + ".jpg.jpg") -Destination ".\$($_.BaseName).jp2.jpg"
 			}
         
 	}
