@@ -1,6 +1,6 @@
 # UC Libraries, DigitzeUC Spokes
 # Generate derivatives for DRC
-# 2015-07-17, Nathan Tallman
+# 2015-12-10, Nathan Tallman
 
 Get-ChildItem "." -recurse -filter *.tif | `
 	Foreach {
