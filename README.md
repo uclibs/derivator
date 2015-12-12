@@ -1,4 +1,4 @@
-DigitizeUC
+Derivator
 ==========
 
 Utilities for working with digital content at UC Libraries. Users may have to run the `Set-ExecutionPolicy Unrestricted` command from PowerShell in order to be able to run scripts.
